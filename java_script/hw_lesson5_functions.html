@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>FUNCTIONS</title>
 </head>
 <body>
 <script>
@@ -87,16 +87,151 @@
     //  }
     // console.log(minNumber([1, 3, 5, 6, -8, 0, 5]));
 
-     // - створити функцію яка приймає масив чисел, сумує значення елементів масиву та повертає його. Приклад [1,2,10]->13
-     function summatorArr(arr){
-         let sum=0;
-         for (const arrElement of arr) {
-            sum+=arrElement;
+    // - створити функцію яка приймає масив чисел, сумує значення елементів масиву та повертає його. Приклад [1,2,10]->13
+    //  function summatorArr(arr){
+    //      let sum=0;
+    //      for (const arrElement of arr) {
+    //         sum+=arrElement;
+    //
+    //      }
+    //      return sum;
+    //  }
+    // console.log(summatorArr([1,2,10]));
 
-         }
-         return sum;
-     }
-    console.log(summatorArr([1,2,10]));
+    // ADDITIONAL
+    //     Всі функції повинні бути описані стрілочним типом!!!!
+    //     - створити функцію яка приймає три числа та виводить найменьше. (Без Math.min!)
+    // let min = (a, b, c) => {
+    //     let minNum = 0;
+    //     if (a < b && a < c) {
+    //         minNum = a
+    //     } else if (b < a && b < c) {
+    //         minNum = b
+    //     } else if (c < a && c < b) {
+    //         minNum = c
+    //     } else {
+    //         minNum = a;
+    //         console.log('numbers equal')
+    //     }
+    //     return minNum
+    // }
+    // console.log(min(4, -4, 9));
+    //     - створити функцію яка приймає три числа та виводить найбільше. (Без Math.max!)
+    // let max = (a, b, c) => {
+    //     let maxNum = 0;
+    //     if (a > b && a > c) {
+    //         maxNum = a
+    //     } else if (b > a && b > c) {
+    //         maxNum = b
+    //     } else if (c > a && c > b) {
+    //         maxNum = c
+    //     } else {
+    //         maxNum = a;
+    //         console.log('numbers equal')
+    //     }
+    //     return maxNum
+    // }
+    // console.log(max(4, 4, 8));
+
+    //     - створити функцію яка повертає найбільше число з масиву
+    // let findMax = (numbers) => {
+    //     let max = 0;
+    //     for (let Element of numbers) {
+    //         if (Element > max) {
+    //             max = Element
+    //         }
+    //     }
+    //     return max;
+    // }
+    //  console.log(findMax([1, 3, -5]));
+
+    //     - створити функцію яка повертає найменьше число з масиву
+    //     let findMin = (numbers) => {
+    //         let min = 0;
+    //         for (let Element of numbers) {
+    //             if (Element < min) {
+    //                 min = Element
+    //             }
+    //         }
+    //         return min;
+    //     }
+    //     console.log(findMin([1, 3, -5]));
+
+    //     - створити функцію яка приймає масив чисел, сумує значення елементів масиву та повертає його. Приклад [1,2,10]->13
+    // let sumArray = (array) => {
+    //     let sum = 0;
+    //     for (let Element of array) {
+    //         sum += Element
+    //     }
+    //     return sum
+    // }
+    // console.log(sumArray([1, 2, 10]));
+
+    //     - Дано натуральное число n. Выведите все числа от 1 до n.
+    // let printNumbersToN=(n)=>{
+    //     for (let i = 1; i < n ; i++) {
+    //         console.log(i)
+    //     }
+    // }
+    // printNumbersToN(5)
+
+    //     - Даны два целых числа A и В . Выведите все числа от A до B включительно, в порядке возрастания, если A < B,
+    //     или в порядке убывания в противном случае.
+    // let printFromAToB=(a,b)=>{
+    // if (a<b){
+    //     for (let i = a; i <= b ; i++) {
+    //         console.log(i)
+    //     }
+    // }else if (a>b){
+    //     for (let i = a; i >= b ; i--) {
+    //         console.log(i)
+    //     }
+    // }}
+    // printFromAToB(5,10)
+    //
+    //     -   функція Приймає масив та число "i", та міняє місцями об`єкт який знаходиться в індексі "i" на "i+1"
+    //   EXAMPLE:
+    //   foo([9,8,0,4], 0) // ==> [ 8, 9, 0, 4 ]
+    //   foo([9,8,0,4], 1) // ==> [ 9 ,0, 8, 4 ]
+    //   foo([9,8,0,4], 2) // ==> [ 9, 8, 4, 0 ]
+    // let foo=(arr,n)=>{
+    //     let num;
+    //     num=arr[n];
+    //     arr[n]=arr[n+1];
+    //     arr[n+1]=num;
+    //     return arr
+    // }
+    // console.log(foo([9, 8, 0, 4], 0));
+    // console.log(foo([9, 8, 0, 4], 1));
+    // console.log(foo([9, 8, 0, 4], 2));
+    //
+    // - Сворити функцію яка буде переносити елементи з значенням 0 у кінець масиву. Зберігаючи при цьому порядок не нульових значень.
+    // Двожина масиву від 2 до 100
+    // EXAMPLE:
+    // [1,0,6,0,3] => [1,6,3,0,0]
+    // [0,1,2,3,4] => [1,2,3,4,0]
+    // [0,0,1,0]   => [1,0,0,0]
+    let moveZeroToEndOfArr=(arr)=>{
+        let address = 0;
+        let length = arr.length;
+        for (let i = 0; i < length; i++) {
+            if (arr[i] === 0) {
+                address = i;
+                for (let j = address; j < length - 1; j++) {
+                    if (arr[j + 1] !== 0) {
+                        arr[address] = arr[j + 1];
+                        arr[j + 1] = 0;
+                        j = length;
+                    }
+                }
+            }
+        }
+    }
+
+    array = [1,0,6,0,3];
+    moveZeroToEndOfArr(array);
+    console.log(array)
+
 </script>
 
 
