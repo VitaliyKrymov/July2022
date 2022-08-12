@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lesson6</title>
+</head>
+<body>
+<script>
+
+    // - Знайти та вивести довижину настипних стрінгових значень
+    // 'hello world', 'lorem ipsum', 'javascript is cool'
+    // let lengthStr = (str) => console.log(str.length);
+    // lengthStr('hello world');
+    // lengthStr('lorem ipsum');
+    // lengthStr('javascript is cool');
+
+    // - Перевести до великого регістру наступні стрінгові значення
+    // 'hello world', 'lorem ipsum', 'javascript is cool'
+    // let upper=(str)=> console.log(str.toUpperCase());
+    // upper('hello world');
+    // upper('lorem ipsum');
+    // upper('javascript is cool');
+
+    // - Перевести до нижнього регістру настипні стрінгові значення
+    // 'HELLO WORLD', 'LOREM IPSUM', 'JAVASCRIPT IS COOL'
+    // let toLower=(str)=> console.log(str.toLowerCase());
+    // toLower('HELLO WORLD');
+    // toLower('LOREM IPSUM');
+    // toLower('JAVASCRIPT IS COOL');
+
+    // - Є "брудна" стрінга let str = ' dirty string   ' . Почистити її від зайвих пробілів.
+    // let str = ' dirty string   ';
+    // let clearString=(str)=> console.log(str.trim());
+    // clearString(str);
+
+    // - Напишіть функцію stringToarray(str), яка перетворює рядок на масив слів.
+    // let str = 'Ревуть воли як ясла повні';//['Ревуть', 'воли', 'як', 'ясла', 'повні'
+    // let stringToarray = (str) => console.log(str.split(' '));
+    // stringToarray(str);
+    //
+    // - є масив чисел [10,8,-7,55,987,-1011,0,1050,0] . за допомоги map та колбеку перетворити всі об'єкти в масиві на стрінгові.
+    // let arr = [10, 8, -7, 55, 987, -1011, 0, 1050, 0];
+    // let change = arr.map(value => value + '')
+    // console.log(change);
+
+    // - створити функцію sortNums(direction), яка прймає масив чисел, та сортує його від більшого до меньшого, або навпаки в залежності від значення аргументу direction.
+    // let nums = [11, 21, 3];
+    // let sortNums = (nums, direction) => nums.sort((a, b) => {
+    //     if (direction === "ascending") {
+    //         return a - b
+    //     } else {
+    //         return b - a
+    //     }
+    // })
+    //
+    // console.log(sortNums(nums, 'ascending')); // [3,11,21]
+    // console.log(sortNums(nums, 'descending')); // [21,11,3]
+    // sortNums(nums, 'descending')
+    //
+    // - є масив
+    let coursesAndDurationArray = [
+        {title: 'JavaScript Complex', monthDuration: 5},
+        {title: 'Java Complex', monthDuration: 6},
+        {title: 'Python Complex', monthDuration: 6},
+        {title: 'QA Complex', monthDuration: 4},
+        {title: 'FullStack', monthDuration: 7},
+        {title: 'Frontend', monthDuration: 4}
+    ];
+    // -- відсортувати його за спаданням за monthDuration
+    // let sortMonthDuration=(coursesAndDurationArray)=>coursesAndDurationArray.sort((a,b)=>b.monthDuration-a.monthDuration)
+    // console.log(sortMonthDuration(coursesAndDurationArray));
+
+    // -- відфільтрувати , залишивши тільки курси з тривалістю більше 5 місяців
+    // let sortCourses = coursesAndDurationArray.filter((course) => course.monthDuration > 5)
+    // console.log(sortCourses);
+    //
+    // описати колоду карт
+    // - знайти піковий туз
+    // - всі шістки
+    // - всі червоні карти
+    // - всі буби
+    // - всі трефи від 9 та більше
+    //
+    //
+    // {
+    //     cardSuit: '', // 'spade', 'diamond','heart', 'clubs'
+    //         value
+    // :
+    //     '', // '6'-'10', 'ace','jack','queen','king','joker'
+    //         color
+    // :
+    //     '', // 'red','black'
+    // }
+    //
+    // {
+//     spades:[],
+//     diamonds:[],
+//     hearts:[],
+//     clubs:[]
+// }
+
+// let deckOfCards = [
+//     {
+//         cardSuit: null,
+//         value: 'Joker',
+//         color: 'black'
+//     },
+//     {
+//         cardSuit: null,
+//         value: 'Joker',
+//         color: 'red'
+//     },
+//     {
+//         cardSuit: 'spade',
+//         value: 'ace',
+//         color: 'black'
+//     },
+//     {
+//         cardSuit: 'clubs',
+//         value: 'ace',
+//         color: 'black'
+//     },
+//     {
+//         cardSuit: 'diamond',
+//         value: 'ace',
+//         color: 'red'
+//     },
+//     {
+//         cardSuit: 'heart',
+//         value: 'ace',
+//         color: 'red'
+//     },
+//     {
+//         cardSuit: 'spade',
+//         value: 'king',
+//         color: 'black'
+//     },
+//     {
+//         cardSuit: 'clubs',
+//         value: 'king',
+//         color: 'black'
+//     },
+//     {
+//         cardSuit: 'diamond',
+//         value: 'king',
+//         color: 'red'
+//     },
+//     {
+//         cardSuit: 'heart',
+//         value: 'king',
+//         color: 'red'
+//     },
+//     {
+//         cardSuit: 'spade',
+//         value: 'queen',
+//         color: 'black'
+//     },
+//     {
+//         cardSuit: 'clubs',
+//         value: 'queen',
+//         color: 'black'
+//     },
+//     {
+//         cardSuit: 'diamond',
+//         value: 'queen',
+//         color: 'red'
+//     },
+//     {
+//         cardSuit: 'heart',
+//         value: 'queen',
+//         color: 'red'
+//     },
+//     {
+//         cardSuit: 'spade',
+//         value: 'jack',
+//         color: 'black'
+//     },
+//     {
+//         cardSuit: 'clubs',
+//         value: 'jack',
+//         color: 'black'
+//     },
+//     {
+//         cardSuit: 'diamond',
+//         value: 'jack',
+//         color: 'red'
+//     },
+//     {
+//         cardSuit: 'heart',
+//         value: 'jack',
+//         color: 'red'
+//     },
+//     {
+//         cardSuit: 'spade',
+//         value: '10',
+//         color: 'black'
+//     },
+//     {
+//         cardSuit: 'clubs',
+//         value: '10',
+//         color: 'black'
+//     },
+//     {
+//         cardSuit: 'diamond',
+//         value: '10',
+//         color: 'red'
+//     },
+//     {
+//         cardSuit: 'heart',
+//         value: '10',
+//         color: 'red'
+//     },
+//     {
+//         cardSuit: 'spade',
+//         value: '9',
+//         color: 'black'
+//     },
+//     {
+//         cardSuit: 'clubs',
+//         value: '9',
+//         color: 'black'
+//     },
+//     {
+//         cardSuit: 'diamond',
+//         value: '9',
+//         color: 'red'
+//     },
+//     {
+//         cardSuit: 'heart',
+//         value: '9',
+//         color: 'red'
+//     },
+//     {
+//         cardSuit: 'spade',
+//         value: '8',
+//         color: 'black'
+//     },
+//     {
+//         cardSuit: 'clubs',
+//         value: '8',
+//         color: 'black'
+//     },
+//     {
+//         cardSuit: 'diamond',
+//         value: '8',
+//         color: 'red'
+//     },
+//     {
+//         cardSuit: 'heart',
+//         value: '8',
+//         color: 'red'
+//     },
+//     {
+//         cardSuit: 'spade',
+//         value: '7',
+//         color: 'black'
+//     },
+//     {
+//         cardSuit: 'clubs',
+//         value: '7',
+//         color: 'black'
+//     },
+//     {
+//         cardSuit: 'diamond',
+//         value: '7',
+//         color: 'red'
+//     },
+//     {
+//         cardSuit: 'heart',
+//         value: '7',
+//         color: 'red'
+//     },
+//     {
+//         cardSuit: 'spade',
+//         value: '6',
+//         color: 'black'
+//     },
+//     {
+//         cardSuit: 'clubs',
+//         value: '6',
+//         color: 'black'
+//     },
+//     {
+//         cardSuit: 'diamond',
+//         value: '6',
+//         color: 'red'
+//     },
+//     {
+//         cardSuit: 'heart',
+//         value: '6',
+//         color: 'red'
+//     }
+// ]
+
+// - знайти піковий туз
+
+// let find = deckOfCards.find(value => value.cardSuit === 'spade' && value.value === 'ace');
+// console.log(find);
+
+// - всі шістки
+
+// let filter = deckOfCards.filter(value => value.value === 6);
+// console.log(filter);
+
+// - всі червоні карти
+
+// let filter = deckOfCards.filter(value => value.color === 'red');
+// console.log(filter);
+
+// - всі буби
+
+// let filter = deckOfCards.filter(value => value.cardSuit === 'diamond');
+// console.log(filter);
+
+// - всі трефи від 9 та більше
+
+// let filter = deckOfCards.filter(value => value.cardSuit === 'spade' && value.value > 8 || typeof value.value === 'string' &&
+//     value.cardSuit === 'spade' || value.value === 'Joker' && value.color === 'black');
+// console.log(filter);
+
+// let filter = deckOfCards.filter(value => value.cardSuit === 'spade' && value.value > '8' || value.value === '10' &&
+// value.cardSuit === 'spade' || value.value === 'Joker' && value.color === 'black');
+// console.log(filter);
+// {
+//     spades:[],
+//         diamonds
+// :
+//     [],
+//         hearts
+// :
+//     [],
+//         clubs
+// :
+//     []
+// }
+
+//
+        // Додатково по reduce
+        // Взяти описану колоду карт, та за допомоги редюсу попакувати всі карти по "мастях" в об'єкт
+        // {
+        //     spades:[],
+        //         diamonds:[],
+        //     hearts:[],
+        //     clubs:[]
+        // }
+// let reduce = deckOfCards.reduce((accum, card) => {
+//         if (card.cardSuit === 'spade') {
+//             accum.spades.push(card);
+//         } else if (card.cardSuit === 'diamond') {
+//             accum.diamonds.push(card);
+//         } else if (card.cardSuit === 'heart') {
+//             accum.hearts.push(card);
+//         } else if (card.cardSuit === 'clubs') {
+//             accum.clubs.push(card);
+//         } else {
+//             accum.joker.push(card);
+//         }
+//         return accum;
+//     }, {
+//         spades: [],
+//         diamonds: [],
+//         hearts: [],
+//         clubs: [],
+//         joker: []
+//     }
+// );
+// console.log(reduce);
+
+
+    //                                                          <!--Additional-->
+    //
+    // - Напишите функцию cutString(str, n), которая делит строку на подстроки, состоящие из n символов.
+    // document.writeln(cutString('наслаждение',3)) // [нас,лаж,ден,ие]
+    // let str = 'наслаждение';
+    // let newArr = [];
+    // cutString = (str, n) => {
+    //     let newStr = '';
+    //     for (i = 0; i < str.length; i = i + n) {
+    //         let slise = str.slice(i, i + n);
+    //         newStr = newStr + str.slice(i, i + n)
+    //         if (slise.length === n) {
+    //             newStr = newStr + ','
+    //         }
+    //     }
+    //     newArr = newStr.split(',');
+    //     return newArr;
+    // }
+    // document.write(cutString(str, 4));
+
+    // - Напишіть функцію delete_characters(str, length), яка повертає підрядок, що складається із зазначеної кількості символів.
+    // document.writeln(delete_characters(str, 7)); // Каждый
+    // let str = 'Каждый охотник желает знать';
+    // delete_character = (str, n) => str.substring(0, n)
+    // document.write(delete_character(str, 7));
+
+    // - Напишіть функцію insert_dash(str), яка приймає рядок str як аргумент і вставляє тире (-) між словами. При цьому всі символи рядка необхідно перевести у верхній регістр.
+    //  let str = "HTML JavaScript PHP";
+    // document.writeln(insert_dash(str)); // 'HTML-JAVASCRIPT-PHP'
+    //  insert_dash=(str)=>str.split(' ').join('-').toUpperCase();
+    //  document.write(insert_dash(str));
+
+    // - Напишіть функцію, яка приймає рядок як аргумент і перетворює регістр першого символу рядка з нижнього регістру у верхній.
+    // let str = 'hellow world'
+    // let apperFist = (str) => str[0].toUpperCase().concat(str.slice(1,str.length));
+    // document.write(apperFist(str))
+
+    // - Дано список імен.
+    // let n1 = 'Harry.._:;_Potter'
+    // let n2 = 'Ron---Whisley'
+    // let n3 = 'Hermione__Granger#$'
+    // Написати функцію, яка приймає будь яке не валідне імя, та нормалізує його в наступнйи вигляд
+    // let n1 = 'Harry Potter'
+    // let n2 = 'Ron Whisley'
+    // let n3 = 'Hermione Granger'
+    // let normalName=(str)=>str.split(/[_.-:;#@$%&]/).join(' ')
+    // document.write(normalName(n3))
+
+    //або без використання регулярного виразу:
+    // let normalName=(str)=>str.split('.').join(' ').split('-').join(' ').split('_').join(' ').split(':').join(' ').split(';').join(' ')
+    // document.write(normalName(n3))
+
+    // let str = '   $%^&Harry   @#$%^&*()  Potter   @#$%';
+    // const norm = (st) => {
+    //     let string = st.split('').map(value =>
+    //         (value >= 'A' && value <= 'Z') || (value >= 'a' && value <= 'z') ?
+    //             value : ' ').join('').trim();
+    //     while (string.includes('  ')) {
+    //         string = string.replace('  ', ' ');
+    //     }
+    //     return string;
+    // }
+    // console.log(norm(str));
+
+    //
+    //     - створити функцію, яка генерує масив рандомних числових цілих значень в діапазоні від 0 до 100.
+    // let random=(numMinStart,numMaxEnd)=>Math.round(Math.random()*(numMaxEnd-numMinStart)+numMinStart)
+    // document.write(random(0,10)+' ');
+
+    // - створити (або згенерувати, за допомоги попередньої функції) масив рандомних цілих числових значень. Відсортувати його за допомоги sort
+    // let random = (numMinStart, numMaxEnd) => Math.round(Math.random() * (numMaxEnd - numMinStart) + numMinStart)
+    // let arr = [];
+    // filter = (arr) => {
+    //     for (let i = 0; i < 10; i++) {
+    //         arr[i] = random(0, 10);
+    //     }
+    //     document.write(arr,' ---> ');
+    //     arr.sort((arr1, arr2) => arr1 - arr2)
+    //     document.write(arr);
+    // }
+    // filter(arr)
+
+    // - створити (або згенерувати, за допомоги попередньої функції) масив рандомних цілих числових значень.
+    // відфільтрувати  його за допомоги filter, залишивши тільки парні числа (без 0!)
+    // let random = (numMinStart, numMaxEnd) => Math.round(Math.random() * (numMaxEnd - numMinStart) + numMinStart)
+    // let arr = [];
+    // let newArr = [];
+    // filterPairsNumber = (arr) => {
+    //     for (let i = 0; i < 10; i++) {
+    //         arr[i] = random(0, 10);
+    //     }
+    //     newArr = arr.filter(value => (!(value % 2) && value !== 0))
+    //     document.write(arr, '--->',newArr);
+    // }
+    // filterPairsNumber(arr);
+
+    // - Напишіть функцію capitalize(str), яка повертає рядок, у якому кожне слово починається з великої літери.
+    // let str = 'hello world i am vasia';
+    // let capitalize = (str) => str.split(' ').map(word => word[0].toUpperCase() + word.substring(1)).join(' ')
+    // console.log(capitalize(str));
+
+    // - Створити функцію-валідатор для адрес електронної пошти. Перевірка повинна включати в себе :данні до знака равлика(@), наявність равлика, крапку яка знаходиться не меньше ніж на 2 символ далі після равлика, функція не чутлива до регістру (some@email.com,SOME@EMAIL.COM,some@EMAIL.com, і тд - однакові значення)
+    // Протестувати на значеннях
+    // someemail@gmail.com
+    // someeMAIL@gmail.com
+    // someeMAIL@i.ua
+    // some.email@gmail.com
+    // // Примітка
+    // Для тих, хто дуже розумний, та почне використовувати регулярні вирази одразу "ні". Своїм мозком подумайте над протоколом, з регулярками будете потім бавитись.
+
+
+    // function validatorEmail(email) {
+    //     //Delete spaces
+    //     let emailNorm = email.trim().toLowerCase();
+    //     // console.log('emailNorm---> ', emailNorm);
+    //     // Check minimum valid length of an Email.
+    //     if (emailNorm.length <= 5) {
+    //         return false;
+    //         console.log('Email is too short');
+    //     }
+    //     let parts = emailNorm.split("@");
+    //     // console.log('parts---> ', parts);
+    //
+    //     //Check whether Dot is present, and that too minimum 1 character after @.
+    //
+    //     let whereDot0 = parts[0].indexOf(".");
+    //     let whereDot1 = parts[1].indexOf(".");
+    //     let whereDot1Last = parts[1].lastIndexOf(".");
+    //
+    //     if (whereDot0 === 0 || whereDot0 === parts[0].length - 1) {
+    //         return false
+    //     }
+    //     if (whereDot1 === 0 || whereDot1Last === parts[1].length - 1) {
+    //         return false
+    //     }
+    //     // console.log('whereDot0---> ', whereDot0);
+    //     // console.log('whereDot1---> ', whereDot1);
+    //     // console.log('whereDot1Last---> ', whereDot1Last);
+    //     let len0 = parts[0].length;
+    //     let len1 = parts[1].length;
+    //     // console.log('len(parts[0].length) --->', len0);
+    //     // console.log('len(parts[1].length) --->', len1);
+    //     let dotSplits0 = parts[0].split(".");
+    //     let dotSplits1 = parts[1].split(".");
+    //     // console.log('dotSplits0---> ', dotSplits0);
+    //     // console.log('dotSplits1---> ', dotSplits1);
+    //     let dotCount0 = dotSplits0.length - 1;
+    //     // console.log('dotCount0---> ', dotCount0);
+    //
+    //     let dotCount1 = dotSplits1.length - 1;
+    //     // console.log('dotCount1---> ', dotCount1);
+    //
+    //     if (whereDot0 === 0 || whereDot1 < 2 || dotCount0 > 1|| dotCount1 > 1) {
+    //         // console.log('0!');
+    //         return false;
+    //     }
+    //     //Check whether Dot is not the last character and dots are not repeated.
+    //     for (var i = 0; i < dotSplits1.length; i++) {
+    //         if (dotSplits1[i].length == 0) {
+    //             console.log('1!');
+    //             return false;
+    //         }
+    //     }
+    //     // If whether email has @ character
+    //     let atSymbol = emailNorm.indexOf("@");
+    //     if (emailNorm.indexOf("@") <= 0) {
+    //         console.log('2!');
+    //         return false;
+    //     }
+    //     if (atSymbol < 1) {
+    //         console.log('3!');
+    //         return false};
+    //     console.log(`email is valid: ${email} `);
+    //     return true;
+    //
+    // }
+    //
+    // console.log(validatorEmail(' someeMAIL@i.ua '));
+    // console.log(validatorEmail(' someemail@gmail.com '));
+    // console.log(validatorEmail(' some.email@gmail..com '));
+    // console.log(validatorEmail(' some..email@gmail.com '));
+    // console.log(validatorEmail(' some.email@gmail.com '));
+
+
+    // - є масив:
+    // let coursesArray = [
+    //     {
+    //         title: 'JavaScript Complex',
+    //         monthDuration: 5,
+    //         hourDuration: 909,
+    //         modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'node.js']
+    //     },
+    //     {
+    //         title: 'Java Complex',
+    //         monthDuration: 6,
+    //         hourDuration: 909,
+    //         modules: ['html',
+    //             'css',
+    //             'js',
+    //             'mysql',
+    //             'mongodb',
+    //             'angular',
+    //             'aws',
+    //             'docker',
+    //             'git',
+    //             'java core',
+    //             'java advanced']
+    //     },
+    //     {
+    //         title: 'Python Complex',
+    //         monthDuration: 6,
+    //         hourDuration: 909,
+    //         modules: ['html',
+    //             'css',
+    //             'js',
+    //             'mysql',
+    //             'mongodb',
+    //             'angular',
+    //             'aws',
+    //             'docker',
+    //             'python core',
+    //             'python advanced']
+    //     },
+    //     {
+    //         title: 'QA Complex',
+    //         monthDuration: 4,
+    //         hourDuration: 909,
+    //         modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'git', 'QA/QC']
+    //     },
+    //     {
+    //         title: 'FullStack',
+    //         monthDuration: 7,
+    //         hourDuration: 909,
+    //         modules: ['html',
+    //             'css',
+    //             'js',
+    //             'mysql',
+    //             'mongodb',
+    //             'react',
+    //             'angular',
+    //             'aws',
+    //             'docker',
+    //             'git',
+    //             'node.js',
+    //             'python',
+    //             'java']
+    //     },
+    //     {
+    //         title: 'Frontend',
+    //         monthDuration: 4,
+    //         hourDuration: 909,
+    //         modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'sass']
+    //     }
+    // ];
+    //
+    // //
+    // // відсортувати його в спадаючому порядку за кількістю елементів в полі modules
+    // let sortModules=(arr)=>arr.sort((course1,course2)=> course2.modules.length-course1.modules.length);
+    // console.log(sortModules(coursesArray));
+    //
+    // - Напишіть функцію count(str, stringsearch), яка повертає кількість символів stringsearch у рядку str.
+    // let symb = "о";
+    // let str = "Астрономия это наука о небесных объектах";
+    //     let count = (str, symb) => {
+    //     let counter = 0;
+    //     for (const strKey in str) {
+    //         if (str[strKey] === symb) {
+    //             counter++
+    //         }
+    //     } return counter
+    // }
+    // document.writeln(count(str, symb)) // 5
+    //
+    // - Напишіть функцію cutString(str, n), яка видаляє зайві слова з рядка str, залишивши у ній n слів.
+    // let str = "Сила тяжести приложена к центру масс тела";
+    // let cutString = (str, n) => str.split(' ').splice(0, n).join(' ');
+    // document.writeln(cutString(str, 5)) // 'Сила тяжести приложена к центру'
+    //
+    //
+    // -створити масив книжок (назва, кількість сторінок, автори , жанри).
+    // let library = [{name: 'Island', lists: 100, author: ['vasia',], genre: ['balads', 'fghsh', 'shdhsdhh']},
+    //     {name: 'math 2000', lists: 700, author: ['vasia', 'vova'], genre: ['balads']},
+    //     {name: 'js', lists: 800, author: ['olia'], genre: ['IT']},
+    //     {name: 'basic', lists: 300, author: ['ivan', 'slavik', 'dad'], genre: ['IT', 'legends', 'fgdsgfd', 'sgdg', 'sgggs']},
+    //     {name: 'node', lists: 500, author: ['ania'], genre: ['IT']},]
+
+    // -знайти наібльшу книжку.
+    // let maxBook = (library) => library.reduce(function (accumulator, book) {
+    //     if (accumulator.lists <= book.lists) {
+    //         return book
+    //     } else return accumulator;
+    // }, {name: '', lists: 0, author: [], genre: []});
+
+    // console.log(maxBook(library));
+
+    // - знайти книжку/ки з найбільшою кількістю жанрів
+    // let maxGenre = (library) => library.reduce(function (accumulator, book) {
+    //     if (accumulator.genre.length < book.genre.length) {
+    //         return book
+    //     } else return accumulator;
+    // }, {name: '', lists: 0, author: [], genre: []});
+    //
+    // console.log(maxGenre(library));
+
+    // - знайти книжку/ки з найдовшою назвою
+    // let maxGenre = (library) => library.reduce(function (accumulator, book) {
+    //     if (accumulator.name.length < book.name.length) {
+    //         return book
+    //     } else return accumulator;
+    // }, {name: '', lists: 0, author: [], genre: []});
+    // console.log(maxGenre(library));
+
+    // - знайти книжку/ки які писали 2 автори
+    // let twoAutors = (library) => library.reduce(function (accumulator, book) {
+    //     if (accumulator.author.length <= book.author.length || book.author.length === 2) {
+    //         return book
+    //     } else return accumulator;
+    // }, {name: '', lists: 0, author: [], genre: []});
+
+    // console.log(twoAutors(library));
+
+    // - знайти книжку/ки які писав 1 автор
+    // let oneAutor = (library) => library.reduce(function (accumulator, book) {
+    //     if (accumulator.author.length <= book.author.length || book.author.length === 1) {
+    //         return book
+    //     } else return accumulator;
+    // }, {name: '', lists: 0, author: [], genre: []});
+
+    // console.log(oneAutor(library));
+
+    // - вісортувати книжки по кількості сторінок по зростанню
+    // let sortBooksFronPages = (library) => library.sort((book1, book2) => book1.lists - book2.lists)
+
+    // console.log(sortBooksFronPages(library));
+
+
+</script>
+
+
+</body>
+</html>
