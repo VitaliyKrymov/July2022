@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>constructors</title>
+</head>
+<body>
+<script>
+    // - Створити функцію конструктор для об'єктів User з полями id, name, surname , email, phone
+    // function User(id, name, surname, email, phone) {
+    //     this.id = id
+    //     this.name = name
+    //     this.surname = surname
+    //     this.email = email
+    //     this.phone = phone
+    // }
+
+    // створити пустий масив, наповнити його 10 об'єктами new User(....)
+    // let users = [];
+    // for (let i = 1; i < 11; i++) {
+    //     users.push(new User(id = i, name = 'vasia' + i, surname = 'Pupkin' + i, email = (`pup${i}@gmail.com`), phone = '+38095' + (Math.round((Math.random() * 100000)))))
+    // }
+    // console.log(arr);
+    // - Взяти масив з  User[] з попереднього завдання, та відфільтрувати , залишивши тільки об'єкти з парними id (filter)
+    //
+    // let userPairs = users.filter((a, i, users) => a.id % 2 === 0);
+    // console.log(userPairs);
+
+    // - Взяти масив з  User[] з попереднього завдання, та відсортувати його по id. по зростанню (sort)
+    // let sortUserId = users.sort((user1, user2) => user1.id-user2.id);
+    // console.log(sortUserId);
+
+    // - створити класс для об'єктів Client з полями id, name, surname , email, phone, order (поле є масивом зі списком товарів)
+    // class Client{
+    //     constructor(id, name, surname , email, phone, order) {
+    //         this.id = id;
+    //         this.name = name;
+    //         this.surname = surname;
+    //         this.email = email;
+    //         this.phone = phone;
+    //         this.order = order;
+    //     }
+    // }
+
+    // створити пустий масив, наповнити його 10 об'єктами Client
+    // let arrClients = [];
+    // arrClients.push(new Client(1,'vasia1','pupkin1','pup1@gmail.com','+380958745739',['bread','cake','sugar','ags','lemons','carrot','juice']))
+    // arrClients.push(new Client(2,'vasia2','pupkin2','pup2@gmail.com','+380959874572',['ags','lemons','carrot','juice']))
+    // arrClients.push(new Client(3,'vasia3','pupkin3','pup3@gmail.com','+380959874539',['vine','butter','bread','cake','sugar','ags','lemons','carrot','juice']))
+    // arrClients.push(new Client(4,'vasia4','pupkin4','pup4@gmail.com','+380958745730',['bread','cake','sugar','carrot','juice']))
+    // arrClients.push(new Client(5,'vasia5','pupkin5','pup5@gmail.com','+380958745739',['bread','cake','sugar','ags','lemons','carrot','juice']))
+    // arrClients.push(new Client(6,'vasia6','pupkin6','pup6@gmail.com','+380959875739',['bread','juice']))
+    // arrClients.push(new Client(7,'vasia7','pupkin7','pup7@gmail.com','+380959874573',['vine','butter','cake','sugar','ags','lemons','carrot','juice']))
+    // arrClients.push(new Client(8,'vasia8','pupkin8','pup8@gmail.com','+380959845730',['bread','cake','sugar','ags','lemons','carrot','juice']))
+    // arrClients.push(new Client(9,'vasia9','pupkin9','pup9@gmail.com','+380959874576',['vine','butter','bread','carrot','juice']))
+    // arrClients.push(new Client(10,'vasia10','pupkin10','pup10@gmail.com','+380959874839',['bread']))
+    // console.log(arrClients);
+
+    // - Взяти масив (Client [] з попереднього завдання).Відсортувати його по кількості товарів в полі order по зростанню. (sort)
+    // sortArr = arrClients.sort((a,b)=>a.order.length-b.order.length)
+    // console.log(sortArr);
+
+    // - Створити функцію конструктор яка дозволяє створювати об'єкти car, з властивостями модель, виробник, рік випуску, максимальна швидкість, об'єм двигуна. додати в об'єкт функції:
+    // -- drive () - яка виводить в консоль `їдемо зі швидкістю ${максимальна швидкість} на годину`
+    // -- info () - яка виводить всю інформацію про автомобіль в форматі `назва поля - значення поля`
+    // -- increaseMaxSpeed (newSpeed) - яка підвищує значення максимальної швидкості на значення newSpeed
+    // -- changeYear (newValue) - змінює рік випуску на значення newValue
+    // -- addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів, і додає його в поточний об'єкт car
+    //
+    //
+    // - (Те саме, тільки через клас)
+    // Створити клас який дозволяє створювати об'єкти car, з властивостями модель, виробник, рік випуску, максимальна швидкість, об'єм двигуна. додати в об'єкт функції:
+    // -- drive () - яка виводить в консоль `їдемо зі швидкістю ${максимальна швидкість} на годину`
+    // -- info () - яка виводить всю інформацію про автомобіль в форматі `назва поля - значення поля`
+    // -- increaseMaxSpeed (newSpeed) - яка підвищує значення максимальної швидкості на значення newSpeed
+    // -- changeYear (newValue) - змінює рік випуску на значення newValue
+    // -- addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів, і додає його в поточний об'єкт car
+    //
+    //
+    //
+    // -створити класс/функцію конструктор попелюшка з полями ім'я, вік, розмір ноги. Створити масив з 10 попелюшок.
+    // Сторити об'єкт класу "принц" за допомоги класу який має поля ім'я, вік, туфелька яку він знайшов.
+    //     За допомоги циклу знайти яка попелюшка повинна бути з принцом.
+    //     Додатково, знайти необхідну попелюшку за допомоги функції масиву find та відповідного колбеку
+</script>
+
+</body>
+</html>
