@@ -39,17 +39,24 @@ async function getUsers() {
             buttonUserDetails.className='userButtonDetails';
             buttonUserDetails.innerText='user details';
 
-
             userIdName.innerText = `${user.id} ${user.name}`
             userInfo.append(userIdName,buttonUserDetails)
             wrap2.appendChild(userInfo);
             wrap1.appendChild(wrap2)
+
+            buttonUserDetails.addEventListener('click', (event) => {
+                let myWindow = window.location.href="user_details.html";
+                let detailsWrap=document.getElementById('usersDetailsWrap');
+                let userInfoDetails=document.createElement('p');
+
+                userInfoDetails.innerText=`<p>id- ${user.id}</p>`
+                detailsWrap.appendChild(userInfoDetails)
+
+            })
+
         }
-        // let u1=document.getElementById('wrap');
-        // u1.innerText='hfdslghkghgf';
-        // let u2=document.getElementsByClassName('userWrap')[0];
-        // u2.innerText='2345kfsgldgj'
-        // printUsers(users);
+
+
 
 
     } catch (e) {
@@ -58,7 +65,5 @@ async function getUsers() {
 }
 
 getUsers();
-//
-// console.log('1', getUsers());
-// console.log('2', usersArr);
+
 

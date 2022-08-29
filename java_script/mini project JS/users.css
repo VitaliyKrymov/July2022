@@ -11,14 +11,17 @@
     flex-wrap: wrap;
     width: 600px;
     height: 800px;
+    justify-content: center;
+    align-items: center;
 }
 
 #wrap{
-
-    width: 1300px;
-    height: 1300px;
+    display: flex;
+    width: 650px;
+    /*height: 1300px;*/
     background: yellow;
     margin: 5px;
+    justify-content: center;
 }
 .userButtonDetails{
     width: 100px;
