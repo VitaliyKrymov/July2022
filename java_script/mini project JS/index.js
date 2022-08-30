@@ -26,7 +26,6 @@ async function getUsers() {
 
             buttonUserDetails.addEventListener('click', (event) => {
 
-                localStorage.setItem('users', JSON.stringify(users));
                 localStorage.setItem('user', JSON.stringify(user))
                 window.open('user_details.html');
             })
