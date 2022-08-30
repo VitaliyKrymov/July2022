@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+}
+
+#postWrap {
+    background: bisque;
+}
+
+div {
+    display: flex;
+
+    border: 1px solid brown;
+    justify-content: center;
+    flex-direction: column;
+    align-content: space-around;
+    flex-wrap: wrap;
+}
+
+p {
+    width: 300px;
+    border: 1px solid gold;
+    text-align: center;
+    margin: 2px;
+}
+
+.commentWrap {
+    background: antiquewhite;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.commentDiv {
+    width: 300px;
+    justify-content: center;
+    margin: 10px;
+}
