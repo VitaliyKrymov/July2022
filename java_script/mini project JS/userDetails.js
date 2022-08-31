@@ -1,11 +1,8 @@
 let user = JSON.parse(localStorage.getItem('user'));
 
-let wrap = document.getElementById('userWrap');
+let postsWrap = document.getElementsByClassName('postsWrap')[0];
 
-let userInfo = document.createElement('div');
-userInfo.className='userInfo'
-
-wrap.appendChild(userInfo);
+let userInfo = document.getElementsByClassName('userInfo')[0];
 
 function iterate(obj) {
     for (let property in obj) {
@@ -14,11 +11,11 @@ function iterate(obj) {
 
                 iterate(obj[property]);
             } else {
-                let paragraph = document.createElement('p');
-                let fieldOfUser = property + " : " + obj[property];
+                let fieldOfUser = document.createElement('p');
 
-                paragraph.innerText = fieldOfUser;
-                userInfo.appendChild(paragraph)
+                fieldOfUser.innerText = property + " : " + obj[property];
+
+                userInfo.appendChild(fieldOfUser)
             }
         }
     }
@@ -26,10 +23,7 @@ function iterate(obj) {
 
 iterate(user);
 
-let buttonUserPost = document.createElement('button');
-buttonUserPost.className = 'userButtonPost';
-buttonUserPost.innerText = 'post of current user';
-wrap.appendChild(buttonUserPost)
+let buttonUserPost = document.getElementsByClassName('buttonUserPost')[0];
 
 async function getPosts(id) {
     try {
@@ -41,15 +35,20 @@ async function getPosts(id) {
             }))
         for (const post of posts) {
 
+            let titleDivWrap = document.createElement('div');
+            titleDivWrap.className = 'postsDiv'
+
             let titleDiv = document.createElement('div');
-            titleDiv.className='postDiv'
-            console.log(post.title);
+            titleDiv.className = 'postDiv';
             titleDiv.innerText = post.title;
 
-            let buttonPostInfo=document.createElement('button');
-            buttonPostInfo.innerText='post-details'
-            titleDiv.appendChild(buttonPostInfo)
-            wrap.appendChild(titleDiv);
+            let buttonPostInfo = document.createElement('button');
+            buttonPostInfo.innerText = 'post-details';
+
+            titleDivWrap.appendChild(titleDiv);
+            titleDivWrap.appendChild(buttonPostInfo);
+
+            postsWrap.appendChild(titleDivWrap);
 
             buttonPostInfo.addEventListener('click', (event) => {
 

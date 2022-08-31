@@ -1,9 +1,6 @@
 let post = JSON.parse(localStorage.getItem('post'));
 
-let wrap = document.getElementById('postWrap');
-let postInfo = document.createElement('div');
-
-wrap.appendChild(postInfo);
+let postInfo = document.getElementsByClassName('postDetails')[0];
 
 function iterate(obj) {
     for (let property in obj) {
@@ -14,9 +11,7 @@ function iterate(obj) {
             } else {
                 let paragraph = document.createElement('p');
 
-                let fieldOfPost = property + " : " + obj[property];
-
-                paragraph.innerText = fieldOfPost;
+                paragraph.innerText = property + " : " + obj[property];
 
                 postInfo.appendChild(paragraph);
             }
@@ -37,9 +32,10 @@ async function getComments(id) {
         let commentWrap = document.getElementsByClassName('commentWrap')[0];
 
         for (const comment of comments) {
-            console.log(comment);
+
             let commentDiv = document.createElement('div');
             commentDiv.className = 'commentDiv';
+
             commentDiv.innerText = comment.body;
             commentWrap.appendChild(commentDiv);
 

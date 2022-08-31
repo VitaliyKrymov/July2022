@@ -19,7 +19,7 @@ async function getUsers() {
             buttonUserDetails.className = 'userButtonDetails';
             buttonUserDetails.innerText = 'user details';
 
-            userIdName.innerText = `${user.id} ${user.name}`
+            userIdName.innerText = `${user.id}. ${user.name}`
             userInfo.append(userIdName, buttonUserDetails)
             wrap2.appendChild(userInfo);
             wrap1.appendChild(wrap2)

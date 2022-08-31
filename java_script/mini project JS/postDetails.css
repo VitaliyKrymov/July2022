@@ -4,12 +4,12 @@ body {
 
 #postWrap {
     background: bisque;
+    border: 1px solid #e5cece;
 }
 
 div {
     display: flex;
-
-    border: 1px solid brown;
+    border: 1px solid #e5cece;
     justify-content: center;
     flex-direction: column;
     align-content: space-around;
@@ -17,10 +17,11 @@ div {
 }
 
 p {
-    width: 300px;
+    width: 80%;
     border: 1px solid gold;
     text-align: center;
-    margin: 2px;
+    margin: 0.2%;
+    padding: 0.2%;
 }
 
 .commentWrap {
@@ -28,11 +29,16 @@ p {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: center;
+    width: 99%;
+    justify-content: space-evenly;
 }
 
 .commentDiv {
-    width: 300px;
+    width: 18%;
     justify-content: center;
-    margin: 10px;
+    margin: 0.2%;
+    border-radius: 1%;
+    padding: 0.2%;
+    text-align: center;
+    align-content: space-around;
 }

@@ -1,54 +1,53 @@
+body {
+    margin: 0;
+}
+
 .usersWrap {
-
     background: silver;
-
-    height: 50px;
-    margin: 10px;
+    height: 20%;
+    margin: 1%;
+    border: 1px solid yellowgreen;
 }
 
 .userWrap {
     background: rgba(183, 106, 106, 0.24);
     display: flex;
     flex-wrap: wrap;
-    width: 600px;
-    height: 800px;
+    width: 100%;
     justify-content: center;
     align-items: center;
+    border: 1px solid yellowgreen;
 }
 
 #wrap {
     display: flex;
-
     background: rgba(255, 196, 0, 0.35);
     justify-content: center;
-}
-
-.userButtonDetails {
-    width: 100px;
-    height: 20px;
-    background: rgba(110, 136, 136, 0.12);
-    border-radius: 5px;
-}
-
-.userDiv {
-    margin: 5px;
-    width: 250px;
-    height: 100px;
-    border: 1px solid green;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-
-
-}
-
-p {
-    width: 200px;
-    height: 30px;
-    text-align: center;
     border: 1px solid yellowgreen;
 }
 
-body {
-    margin: 0;
+.userButtonDetails {
+    width: 50%;
+    height: 20%;
+    background: rgba(110, 136, 136, 0.12);
+    border-radius: 5%;
+    border: 1px solid yellowgreen;
+    margin: 1%;
+}
+
+.userDiv {
+    margin: 5%;
+    width: 39%;
+    border: 1px solid green;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    text-align: center;
+    border: 1px solid yellowgreen;
 }

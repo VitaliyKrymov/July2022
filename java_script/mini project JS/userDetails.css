@@ -1,26 +1,35 @@
 body {
     margin: 0;
 }
+.postsDiv{
+    width: 20%;
+}
+.postDiv{
+    background: beige;
+    border: 1px solid white;
+    align-content: space-around;
+}
 
-#userWrap {
+.postsWrap {
     display: flex;
     background: antiquewhite;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-around;
+    align-items: flex-end;
     flex-direction: row;
     flex-wrap: wrap;
-    align-content: center;
-
 }
 
 .userInfo {
+    width: 80%;
     background: #e7c599;
     justify-content: center;
     align-items: center;
     margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
-p {
+div {
     text-align: center;
     border: 1px solid yellow;
     margin: 4px;
@@ -29,4 +38,17 @@ p {
 button {
     width: 90%;
     margin-bottom: 10px;
+}
+p{
+    border: 1px solid greenyellow;
+    width: 90%;
+    margin: 0.2%;
+}
+#userDetailsWrap{
+    display: flex;
+    flex-direction: column;
+    width: 99%;
+    background: burlywood;
+    justify-content: center;
+    align-items: center;
 }
