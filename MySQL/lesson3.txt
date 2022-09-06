@@ -1,0 +1,17 @@
+use viy21;
+show tables;
+select *
+from users;
+select *
+from users
+where gender = 'female';
+create table employee
+(
+    id   int primary key not null auto_increment,
+    name varchar(20)     not null
+);
+create table company2
+(
+    id int primary key not null auto_increment,
+    company_name varchar(100) not null
+);
